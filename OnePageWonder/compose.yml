@@ -14,9 +14,8 @@ services:
  
  django-web:
    build: .
+   image: django-web:latest
    container_name: django-docker
-   ports:
-     - "8000:8000"
    depends_on:
      - db
    environment:
@@ -31,7 +30,23 @@ services:
      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
      DATABASE_HOST: ${DATABASE_HOST}
      DATABASE_PORT: ${DATABASE_PORT}
+   volumes:
+     - .:/app
+     - staticfiles:/app/staticfiles
    env_file:
-     - .env
+      - .env
+
+ nginx:
+   build:
+     context: ./nginx
+     dockerfile: Dockerfile
+   ports:
+     - "8080:80"
+   depends_on:
+     - django-web
+   volumes:
+     - staticfiles:/app/staticfiles
+
 volumes:
    postgres_data:
+   staticfiles:
