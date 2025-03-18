@@ -2,50 +2,68 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-color: #f5f5dc;
 }
 
 .home-container {
-    background-image: url('../images/wedding-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: #F4F4E0;
 }
 
 .wedding-info {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
-    max-width: 600px;
-    width: 90%;
+    margin-bottom: 20px;
+    order: 1;
+}
+
+.image-container {
+    width: 100%;
+    text-align: center;
+    order: 2;
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 h1 {
-    font-family: 'Alex Brush', cursive; /* Use the Google Font */
-    font-size: 4em;
+    font-family: 'Alex Brush', cursive; /* Google Font */
+    font-size: clamp(3rem, 12vw, 8rem);
     margin-bottom: 0.5em;
-    color: #8b4513;
+    color: #543839;
 }
 
 .date, .time {
     font-family: 'Arial', sans-serif;
-    font-size: 1.4em;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 0.2em;
-    color: #654321;
+    color: #543839;
 }
 
 .about-container {
-    background-color: #f8f8ff; /* Light lavender background - Change as desired! */
-    padding: 40px 20px;        /* Add padding */
-    text-align: center;          /* Center-align the content */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(245, 245, 220, 0.8);
 }
 
 .about-container h2 {
@@ -82,10 +100,15 @@ h1 {
 }
 
 .bookings-container {
-    background-color: #fff5ee; /* Seashell background - Change as you like! */
-    padding: 40px 20px;
-    text-align: center; /* Center the main heading */
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(245, 245, 220, 0.8);
 }
 
 .bookings-container h2 {
@@ -94,18 +117,18 @@ h1 {
     color: #cd853f; /* Peru color */
 }
 .hotel-list {
-     display: grid;          /* Use CSS Grid for layout */
+    display: grid;          /* Use CSS Grid for layout */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
     gap: 30px;              /* Spacing between columns */
     max-width: 1200px;
     margin: 0 auto;
+    text-align: left;
 }
 
 .hotel {
     border: 1px solid #ccc;
     padding: 25px;
     border-radius: 8px;
-    text-align: left;     /* Left-align text within each hotel */
     background-color: white;
 }
 
@@ -126,13 +149,19 @@ h1 {
 }
 
 .wedding-details-container {
-    background-color: #f0f8ff; /* AliceBlue background - Change as desired */
-    padding: 40px 20px;
-    text-align: center;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(245, 245, 220, 0.8);
 }
 
 .wedding-details-container h2 {
+    text-align: center;
     font-size: 2.5em;
     margin-bottom: 1em;
     color: #4682b4; /* SteelBlue */
@@ -163,13 +192,19 @@ h1 {
 }
 
 .contact-container {
-    background-color: #faf0e6; /* Linen background */
-    padding: 40px 20px;
-    text-align: center;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(245, 245, 220, 0.8);
 }
 
 .contact-container h2 {
+    text-align: center;
     font-size: 2.5em;
     margin-bottom: 1em;
     color: #a0522d; /* Sienna */
