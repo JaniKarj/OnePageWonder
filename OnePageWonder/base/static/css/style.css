@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -8,221 +14,143 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #f5f5dc;
+    color: #543839;
+    text-align: center;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
 }
 
+/* Harmonisointia sivujen kesken */
+.about-container,
+.bookings-container,
+.wedding-details-container,
+.contact-container,
 .home-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 40px 20px;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    background-color: #F4F4E0;
+    background-color: rgba(244, 244, 224, 0.8);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.home-container {
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Alex Brush', cursive;
+    color: #543839;
+    margin-bottom: 0em;
+}
+
+h1 {
+    font-size: clamp(2rem, 10vh, 6rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 8vh, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 6vh, 3rem);
+}
+
+p {
+    font-size: clamp(0.8rem, 3vh, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+.location,
+.directions,
+.parking,
+.hotel,
+.details-section,
+.wedding-details,
+.hotel-list,
+.contact-info {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.wedding-details,
+.hotel-list {
+    display: block;
 }
 
 .wedding-info {
     text-align: center;
-    margin-bottom: 20px;
     order: 1;
+    overflow: visible;
+    margin-bottom: 20px;
+}
+
+.wedding-info .date {
+    font-family: 'Arial', sans-serif;
+    font-size: clamp(1rem, 3vh, 2rem);
+    margin-bottom: 0.5em;
+    margin-top: 0em;
 }
 
 .image-container {
-    width: 100%;
+    width: 80%;
     text-align: center;
     order: 2;
+    max-height: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .home-image {
     max-width: 100%;
+    max-height: 70vh;
     height: auto;
     display: block;
+    object-fit: contain;
 }
 
-h1 {
-    font-family: 'Alex Brush', cursive; /* Google Font */
-    font-size: clamp(3rem, 12vw, 8rem);
-    margin-bottom: 0.5em;
+strong {
     color: #543839;
 }
 
-.date, .time {
-    font-family: 'Arial', sans-serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin-bottom: 0.2em;
-    color: #543839;
-}
+@media (max-width: 768px) {
+    .home-container {
+        padding: 10px;
+    }
 
-.about-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(245, 245, 220, 0.8);
-}
+    .wedding-info {
+        margin-bottom: 10px;
+    }
 
-.about-container h2 {
-    font-size: 2.5em;
-    margin-bottom: 1em;
-    color: #483d8b; /* DarkSlateBlue */
-}
+    .image-container {
+        width: 95%;
+    }
 
-.wedding-details {
-    max-width: 800px;
-    margin: 0 auto;         /* Center the details block */
-    text-align: left;      /* Left-align text within the details */
-    display: grid;          /* Use CSS Grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 20px;              /* Spacing between columns */
-}
+    .home-image {
+        max-height: 60vh;
+    }
 
-.wedding-details h3 {
-    font-size: 1.5em;
-    margin-bottom: 0.5em;
-    color: #6a5acd; /* SlateBlue */
-}
+    h1 {
+        font-size: clamp(1.5rem, 8vh, 4rem);
+    }
 
-.wedding-details p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333;
-}
+    .wedding-info .date {
+        font-size: clamp(0.8rem, 3vh, 1.5rem);
+    }
 
-.location, .directions, .parking {
-    padding: 20px;
-    border: 1px solid #ddd; /* Light gray border */
-    border-radius: 5px;
-}
-
-.bookings-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(245, 245, 220, 0.8);
-}
-
-.bookings-container h2 {
-    font-size: 2.5em;
-    margin-bottom: 1em;
-    color: #cd853f; /* Peru color */
-}
-.hotel-list {
-    display: grid;          /* Use CSS Grid for layout */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 30px;              /* Spacing between columns */
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.hotel {
-    border: 1px solid #ccc;
-    padding: 25px;
-    border-radius: 8px;
-    background-color: white;
-}
-
-.hotel h3 {
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
-    color: #b8860b;  /*DarkGoldenRod*/
-}
-
-.hotel p {
-    font-size: 1em;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 0.8em;
-}
-.hotel strong{
-    color: #8b4513
-}
-
-.wedding-details-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(245, 245, 220, 0.8);
-}
-
-.wedding-details-container h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1em;
-    color: #4682b4; /* SteelBlue */
-}
-
-.details-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Light gray separator line */
-}
-.details-section:last-child{
-    border: none;
-}
-
-.details-section h3 {
-    font-size: 1.8em;
-    margin-bottom: 0.5em;
-    color: #6495ed; /* CornflowerBlue */
-}
-
-.details-section p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 1em;
-}
-
-.contact-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 1;
-    background-color: rgba(245, 245, 220, 0.8);
-}
-
-.contact-container h2 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 1em;
-    color: #a0522d; /* Sienna */
-}
-
-.contact-info{
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: left;
-}
-
-.contact-info p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 0.8em;
-}
-.contact-info strong{
-    color: #8b4513
+    .about-container,
+    .bookings-container,
+    .wedding-details-container,
+    .contact-container {
+        padding: 20px 10px;
+    }
 }

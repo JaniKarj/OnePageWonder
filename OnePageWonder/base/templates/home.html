@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} Tervetuloa häihimme {% endblock title %} 
 {% block content %}
 <div class="home-container">
@@ -6,7 +7,9 @@
         <h1>Saimi &amp; Jani</h1>
         <p class="date">30.08.2025</p>
     </div>
-    
+    <div class="image-container">
+        <img src="{% static 'images/IMG_8070.JPG' %}" alt="Wedding Photo" class="home-image">
+    </div>
 </div>
 {% include "about.html" %}
 {% include "bookings.html" %}
