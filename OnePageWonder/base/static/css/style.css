@@ -1,8 +1,156 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #f5f5dc;
+    color: #543839;
+    text-align: center;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+}
+
+/* Harmonisointia sivujen kesken */
+.about-container,
+.bookings-container,
+.wedding-details-container,
+.contact-container,
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(244, 244, 224, 0.8);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.home-container {
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Alex Brush', cursive;
+    color: #543839;
+    margin-bottom: 0em;
+}
+
+h1 {
+    font-size: clamp(2rem, 10vh, 6rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 8vh, 4rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 6vh, 3rem);
 }
 
 p {
-    color: red;
+    font-size: clamp(0.8rem, 3vh, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 0.8em;
+}
+
+.location,
+.directions,
+.parking,
+.hotel,
+.details-section,
+.wedding-details,
+.hotel-list,
+.contact-info {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.wedding-details,
+.hotel-list {
+    display: block;
+}
+
+.wedding-info {
+    text-align: center;
+    order: 1;
+    overflow: visible;
+    margin-bottom: 20px;
+}
+
+.wedding-info .date {
+    font-family: 'Arial', sans-serif;
+    font-size: clamp(1rem, 3vh, 2rem);
+    margin-bottom: 0.5em;
+    margin-top: 0em;
+}
+
+.image-container {
+    width: 80%;
+    text-align: center;
+    order: 2;
+    max-height: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-image {
+    max-width: 100%;
+    max-height: 70vh;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+strong {
+    color: #543839;
+}
+
+@media (max-width: 768px) {
+    .home-container {
+        padding: 10px;
+    }
+
+    .wedding-info {
+        margin-bottom: 10px;
+    }
+
+    .image-container {
+        width: 95%;
+    }
+
+    .home-image {
+        max-height: 60vh;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 8vh, 4rem);
+    }
+
+    .wedding-info .date {
+        font-size: clamp(0.8rem, 3vh, 1.5rem);
+    }
+
+    .about-container,
+    .bookings-container,
+    .wedding-details-container,
+    .contact-container {
+        padding: 20px 10px;
+    }
 }

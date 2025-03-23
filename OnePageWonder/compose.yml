@@ -45,7 +45,7 @@ services:
    depends_on:
      - django-web
    volumes:
-     - staticfiles:/app/staticfiles
+     - staticfiles:/var/www/static
 
 volumes:
    postgres_data:
